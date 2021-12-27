@@ -39,7 +39,7 @@ fun MyApp(content: @Composable () -> Unit) {
         Scaffold(
             topBar = {
                 TopAppBar(
-                    backgroundColor = Color.Magenta,
+                    backgroundColor = Color.DarkGray,
                     elevation = 5.dp                
                 ) {
                     Text(text = "Movies")
