@@ -23,6 +23,7 @@ val moviesMockList = listOf(
     "GhostBusters",
     "Lord of the Rings",
     "The Social Network",
+    "Interstellar",
     "Karate Kid"
 )
 
@@ -34,7 +35,10 @@ fun HomeScreen(navController: NavController) {
                 backgroundColor = Color.Magenta,
                 elevation = 5.dp
             ) {
-                Text(text = "Movies")
+                Text(
+                    text = "Movies",
+                    modifier = Modifier.padding(start = 8.dp)
+                )
             }
         }
     ) {
