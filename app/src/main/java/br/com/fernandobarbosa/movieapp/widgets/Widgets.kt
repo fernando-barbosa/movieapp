@@ -43,10 +43,7 @@ fun MovieRow(movie: Movie = getMovies()[0],
                 shape = RectangleShape,
                 elevation = 4.dp
             ) {
-                Icon(
-                    imageVector = Icons.Default.AccountBox,
-                    contentDescription = "Movie Image"
-                )
+
             }
             Column(modifier = Modifier.padding(4.dp)) {
                 Text(
