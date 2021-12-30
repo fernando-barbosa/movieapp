@@ -49,10 +49,6 @@ fun DetailsScreen(navController: NavController, movieData: String?) {
                     color = Color.White,
                     style = MaterialTheme.typography.h4
                 )
-                Spacer(modifier = Modifier.height(40.dp))
-                Button(onClick = { navController.popBackStack() }) {
-                    Text(text = "Voltar")
-                }
             }
         }
     }

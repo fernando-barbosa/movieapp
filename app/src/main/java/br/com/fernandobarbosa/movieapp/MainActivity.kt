@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import br.com.fernandobarbosa.movieapp.model.Movie
 import br.com.fernandobarbosa.movieapp.navigation.MovieNavigation
 import br.com.fernandobarbosa.movieapp.ui.theme.MovieAppTheme
 
@@ -38,40 +39,6 @@ class MainActivity : ComponentActivity() {
 fun MyApp(content: @Composable () -> Unit) {
     MovieAppTheme {
         content()
-    }
-}
-
-@Composable
-fun MovieRow(movie: String, onClickItem: (String) -> Unit = {}) {
-    Card(
-        modifier = Modifier
-            .padding(4.dp)
-            .fillMaxWidth()
-            .height(130.dp)
-            .clickable { onClickItem(movie) },
-        shape = RoundedCornerShape(
-            corner = CornerSize(16.dp)),
-        elevation = 6.dp,
-    ) {
-
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Start
-        ) {
-            Surface(
-                modifier = Modifier
-                    .padding(12.dp)
-                    .size(100.dp),
-                shape = RectangleShape,
-                elevation = 4.dp
-            ) {
-                Icon(
-                    imageVector = Icons.Default.AccountBox,
-                    contentDescription = "Movie Image"
-                )
-            }
-            Text(text = movie)
-        }
     }
 }
 
