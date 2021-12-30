@@ -1,6 +1,7 @@
 package br.com.fernandobarbosa.movieapp.screens.home
 
 import android.util.Log
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -18,6 +19,7 @@ import br.com.fernandobarbosa.movieapp.model.getMovies
 import br.com.fernandobarbosa.movieapp.navigation.MovieScreens
 import br.com.fernandobarbosa.movieapp.widgets.MovieRow
 
+@ExperimentalAnimationApi
 @Composable
 fun HomeScreen(navController: NavController) {
     Scaffold(
@@ -37,6 +39,7 @@ fun HomeScreen(navController: NavController) {
     }
 }
 
+@ExperimentalAnimationApi
 @Composable
 fun MainContent(
     navController: NavController,
