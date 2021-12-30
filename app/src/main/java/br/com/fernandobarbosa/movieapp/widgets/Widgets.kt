@@ -16,8 +16,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import br.com.fernandobarbosa.movieapp.model.Movie
 import br.com.fernandobarbosa.movieapp.model.getMovies
 import coil.compose.rememberImagePainter
@@ -37,7 +42,7 @@ fun MovieRow(movie: Movie = getMovies()[0],
         modifier = Modifier
             .padding(4.dp)
             .fillMaxWidth()
-            .height(130.dp)
+            //.height(130.dp)
             .clickable { onClickItem(movie.id) },
         shape = RoundedCornerShape(
             corner = CornerSize(16.dp)
@@ -72,19 +77,38 @@ fun MovieRow(movie: Movie = getMovies()[0],
                     style = MaterialTheme.typography.h6
                 )
                 Text(
-                    text = "Director: ${movie.director}",
-                    style = MaterialTheme.typography.caption
-                )
-                Text(
                     text = "Release: ${movie.year}",
                     style = MaterialTheme.typography.caption
                 )
 
                 AnimatedVisibility(visible = expanded) {
-                    Column(
+                    Column {
+                        Text(buildAnnotatedString {
+                            withStyle(
+                                style = SpanStyle(
+                                    fontSize = 13.sp,
+                                    fontWeight = FontWeight.Light)) {
+                                append(movie.plot)
+                            }
+                        },
+                        modifier = Modifier.padding(6.dp))
 
-                    ) {
-                        Text(text = "Hello there")
+                        Divider(modifier = Modifier.padding(3.dp))
+
+                        Text(
+                            text = "Director: ${movie.director}",
+                            style = MaterialTheme.typography.caption
+                        )
+
+                        Text(
+                            text = "Actors: ${movie.actors}",
+                            style = MaterialTheme.typography.caption
+                        )
+
+                        Text(
+                            text = "Rating: ${movie.rating}",
+                            style = MaterialTheme.typography.caption
+                        )
                     }
                 }
 
